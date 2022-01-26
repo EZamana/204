@@ -1,0 +1,23 @@
+mixin hero(heroImg, title, subtitle, imageLeftTop, imageRightTop, imageLeftBottom, imageLeftRight, topSubtitle)
+    .hero-mixin
+        if topSubtitle
+            p.hero-mixin-topSubttle=topSubtitle
+        h1.hero-mixin-title=title
+        if subtitle
+            .hero-mixin-subtitle
+                each title in subtitle
+                    h3.hero-mixin-subtitle-item=title
+        .hero-mixin-images
+            if heroImg
+                img.hero-mixin-images-heroImg(src=`./img/${heroImg}` alt='hero')
+                if imageLeftTop
+                    img.hero-mixin-images-imageLeftTop(src=`./img/${imageLeftTop}`)
+                if imageRightTop
+                    img.hero-mixin-images-imageRightTop(src=`./img/${imageRightTop}`)
+                if imageLeftBottom
+                    img.hero-mixin-images-imageLeftBottom(src=`./img/${imageLeftBottom}`)
+                if imageLeftRight
+                    img.hero-mixin-images-imageLeftRight(src=`./img/${imageLeftRight}`)
+
+mixin textInput(label)
+    input.textInput(type='text' placeholder=`${label}`)

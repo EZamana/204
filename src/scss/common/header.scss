@@ -116,27 +116,30 @@
     right: 0;
     z-index: 1;
     position: absolute;
-    width: 100%;
+    width: 0;
     height: 100%;
     background-color: $grayColor;
     transition: 0.5s;
     overflow-x: hidden;
 
     &-list {
-
-
-      &-item {
-
-      }
-
       &-link {
         display: flex;
         font-size: 1.25rem;
         font-weight: 600;
         margin: 0 0 0.9375rem 0.625rem;
 
+        &:hover {
+          color: $darkColor;
+        }
+
+        &:active {
+          color: $darkBlue;
+        }
+
         img {
           margin-left: 0.5625rem;
+          transition: .3s;
         }
       }
     }
@@ -153,13 +156,17 @@
         transform: scaleY(1);
       }
 
-      &-item {
-
-      }
-
       &-link {
         display: block;
         margin: 0.625rem 0;
+      }
+
+      &:hover {
+        color: $darkColor;
+      }
+
+      &:active {
+        color: $darkBlue;
       }
     }
 
@@ -178,4 +185,8 @@
 
 .lockScroll {
   overflow: hidden;
+}
+
+.active-arrow {
+  transform: rotate(180deg);
 }

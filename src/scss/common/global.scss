@@ -1,9 +1,11 @@
+$grid-gutter-width: 30px;
+
 body {
   font-family: 'Raleway', sans-serif;
 }
 
-.container {
-  max-width: 71.25rem;
+.container, .container-fluid {
+  max-width: 70.875rem;
 }
 
 a:hover {
@@ -15,6 +17,10 @@ h1 {
   line-height: 6rem;
   font-weight: 700;
   color: $darkColor;
+  @include tablet {
+    font-size: 2.25rem;
+    line-height: 2.7rem;
+  }
 }
 
 h2 {
@@ -22,6 +28,10 @@ h2 {
   line-height: 3.75rem;
   font-weight: 700;
   color: $darkColor;
+  @include tablet {
+    font-size: 1.875rem;
+    line-height: 2.20125rem;
+  }
 }
 
 h3 {
@@ -29,6 +39,10 @@ h3 {
   line-height: 2.348125rem;
   font-weight: 600;
   color: $darkColor;
+  @include tablet {
+    font-size: 1.5rem;
+    line-height: 1.76125rem;
+  }
 }
 
 h4 {
@@ -50,4 +64,108 @@ p {
     font-size: 1rem;
   }
 }
+
+.hero-mixin {
+  position: relative;
+  text-align: center;
+  margin: 5.625rem 0;
+  @include tablet {
+    margin: 1.875rem 0 3.125rem 0;
+  }
+
+  &-title {
+    padding: 0 10%;
+    @include mobile-small{
+      padding: 0;
+    }
+  }
+
+  &-subtitle {
+    margin-top: 2.5rem;
+    @include tablet {
+      margin-top: 1.25rem;
+    }
+
+    &-item {
+      padding: 0 10%;
+      opacity: 80%;
+      @include mobile-small{
+        padding: 0;
+      }
+
+      &:nth-child(n+2) {
+        margin-top: 1.25rem;
+        @include tablet {
+          margin-top: 0.625rem;
+        }
+      }
+
+    }
+  }
+
+  &-topSubttle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: $redColor;
+    margin-bottom: 0.625rem;
+    @include tablet {
+      margin-bottom: 0.3125rem;
+    }
+
+  }
+
+  &-images {
+    position: relative;
+    margin-top: 4.375rem;
+    @include tablet {
+      margin-top: 1.875rem;
+    }
+
+    &-imageLeftTop, &-imageRightTop, &-imageLeftBottom, &-imageLeftRight {
+      position: absolute;
+    }
+
+    &-imageLeftTop {
+      top: 0;
+    }
+
+    &-imageRightTop {
+      top: 0;
+      right: 0;
+    }
+
+    &-imageLeftBottom {
+      bottom: 0;
+    }
+
+    &-imageLeftRight {
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+
+.textInput {
+  width: inherit;
+  background: transparent;
+  color: white;
+  outline: 0;
+  border: 0;
+  border-bottom: 1px white solid;
+  padding-bottom: 0.0625rem;
+
+  &::placeholder {
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  &[type=text]{
+    width: 100%;
+    height: 1.875rem;
+  }
+}
+
+
+
 

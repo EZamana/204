@@ -1,17 +1,21 @@
+let subListBtnArr = document.querySelectorAll('.sublist-btn')
+let sideNav = document.querySelector('.header-sidenav')
+
 document.querySelector('.header-hamburger-img').addEventListener('click', () => {
-    document.querySelector('.header-sidenav').classList.toggle("header-sidenav-open")
+    sideNav.classList.toggle("header-sidenav-open")
     document.body.classList.toggle('lockScroll')
 })
 
-document.querySelectorAll('.sublist-btn').forEach(btn => {
-    btn.addEventListener('click', function()  {
-        this.classList.toggle('active')
+subListBtnArr.forEach(btn => {
+    btn.addEventListener('click', function (e) {
         let sublist = this.nextElementSibling
-        sublist.classList.toggle('header-sidenav-sublist-active')
-        /*if (sublist.classList.contains()) {
-            sublist.style.display = "none"
+        if (this.classList.contains('active')) {
+            this.classList.toggle('active')
         } else {
-            sublist.style.display = 'block'
-        }*/
+            e.preventDefault()
+            this.classList.toggle('active')
+            this.childNodes[1].classList.toggle('active-arrow')
+            sublist.classList.toggle('header-sidenav-sublist-active')
+        }
     })
 })
