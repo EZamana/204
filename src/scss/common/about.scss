@@ -1,0 +1,173 @@
+.about-hero {
+  background: linear-gradient(180deg, $grayColor 60%, white 50%);
+  @include mobile-small {
+    background: linear-gradient(180deg, $grayColor 70%, white 30%);
+  }
+
+  .container {
+    @include laptop {
+      overflow: hidden;
+    }
+  }
+
+  .hero-mixin-images-imageLeftTop {
+    left: -3.5rem;
+    top: -3.5rem;
+    @include tablet {
+      max-height: 2.5rem;
+      left: -2rem;
+      top: -2.5rem;
+    }
+    @include mobile-large {
+      top: -3rem;
+    }
+    @include mobile-small {
+      top: -1rem;
+      left: -1.2rem;
+      max-height: 1.125rem;
+    }
+  }
+
+  .hero-mixin-images-imageLeftRight {
+    bottom: -2.5rem;
+    @include tablet {
+      max-height: 1.1875rem;
+      bottom: -1.75rem;
+    }
+    @include mobile-small {
+      bottom: -1rem;
+      max-height: 0.6rem;
+    }
+  }
+
+}
+
+.why-choose-us {
+  margin-top: 3.75rem;
+  @include tablet {
+    margin-top: 3.125rem;
+  }
+
+  h2, &-subtitle {
+    text-align: center;
+  }
+
+  &-subtitle {
+    color: $darkBlue;
+    margin-top: 0.625rem;
+  }
+
+  &-reasons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 4.8125rem;
+    @include laptop {
+      justify-content: space-around;
+    }
+    @include tablet {
+      margin-top: 1.6875rem;
+    }
+
+    &-item {
+      width: 350px;
+      margin: 15px 0;
+      display: flex;
+      flex-direction: column;
+      @include mobile-small {
+        width: 100%;
+      }
+
+      h4 {
+        margin-bottom: 0.625rem;
+      }
+
+      &-icon {
+        margin-bottom: 0.75rem;
+        min-height: 2.8125rem;
+      }
+
+    }
+  }
+}
+
+.our-team {
+  margin-top: 8.75rem;
+  background-color: $grayColor;
+  padding: 9.375rem 0;
+  @include tablet {
+    margin-top: 2.5rem;
+    padding: 3.125rem 0;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 4.375rem;
+    @include tablet {
+      margin-bottom: 1.875rem
+    }
+  }
+
+  &-info {
+    max-width: 27.8125rem;
+    @include tablet {
+      max-width: 21.875rem;
+    }
+    @include mobile-large {
+      margin: 0 auto;
+    }
+    @include mobile-small {
+      margin: 0;
+      max-width: 100%;
+    }
+
+    p {
+      margin-bottom: 1.875rem;
+      @include tablet {
+        margin-bottom: 0.625rem;
+      }
+    }
+
+    h3 {
+      margin-top: 3.125rem;
+      color: $darkBlue;
+      @include tablet {
+        margin-top: 1.25rem;
+      }
+    }
+  }
+
+  &-imgs {
+    padding-top: 3rem;
+    position: relative;
+    @include laptop {
+      padding-top: 2rem;
+    }
+    @include mobile-large {
+      display: flex;
+      justify-content: center;
+    }
+    &-main {
+      @include mobile-large {
+        max-height: 25rem;
+      }
+    }
+
+    &-icon {
+      position: absolute;
+      top: -0.625rem;
+      left: -6.25rem;
+      @include tablet {
+        max-height: 3.125rem;
+        top: 0;
+        left: -3.25rem;
+      }
+      @include mobile-large {
+        left: 0;
+      }
+      @include mobile-small {
+        left: -1.25rem;
+      }
+    }
+  }
+}

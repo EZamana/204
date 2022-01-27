@@ -19,5 +19,5 @@ mixin hero(heroImg, title, subtitle, imageLeftTop, imageRightTop, imageLeftBotto
                 if imageLeftRight
                     img.hero-mixin-images-imageLeftRight(src=`./img/${imageLeftRight}`)
 
-mixin textInput(label)
-    input.textInput(type='text' placeholder=`${label}`)
+mixin textInput(label, type, id, name, pattern)
+    input.textInput(type=`${type}` placeholder=`${label}` id=`${id}` name=`${name}` pattern=`${pattern}`)

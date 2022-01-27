@@ -1,0 +1,47 @@
+extends common/layout
+include common/mixins
+
+block content
+    main
+        section.about-hero
+            .container
+                .row
+                    .col
+                        +hero('aboutHero.png', 'About Us', ['We are a team of digital marketing enthusiasts who focus on alternative marketing channels and complex marketing automation', 'Our goal is to bring real results for our customers by leveraging different online tools, our experience, and knowledge of this ever changing digital world'], 'aboutHeroIcon1.svg', null, null, 'aboutHeroIcon2.svg')
+        section.why-choose-us
+            .container
+                .row
+                    .col
+                        .why-choose-us-wrapper
+                            h2 Why choose us
+                            h4.why-choose-us-subtitle Everyday we work hard to make life of our clients better and happier
+                            .why-choose-us-reasons
+                                each item in [{icon: 'ResultOriented.svg', title: 'Result-oriented', text: 'Our team consists of professionals who will do everything so that you get the maximum benefit from cooperation'}, {icon: 'AlwaysOnTime.svg', title: 'Always on Time ', text: 'We value your time, so we carefully calculate the deadlines. Be sure, if we promised, we will certainly do it'}, {icon: 'DevelopmentPlan.svg', title: 'Development Plan', text: 'We will carefully study the market, customer requirements, product and develop USP. As a result, you will get a working strategy based on analytical data'},{icon: 'FutureProspects.svg', title: 'Future Prospects', text: 'Our experts will expand your online presence, increase the number of leads or conversions. We take business objectives into account, which has helped us to compete with other digital marketing agencies'},{icon: 'valueOurClients.svg', title: 'Value our Clients', text: 'We take each client seriously and provide them with a very personalized approach to reach their goals. We are very flexible and ready to change our standard processes if it is to benefit our customers'},{icon: 'EffectiveServices.svg', title: 'Effective Services', text: 'We place a premium on high-quality communication, in which the needs and wishes of the client are always considered, and we act promptly to take our clients’ requests into account'}]
+                                    .why-choose-us-reasons-item
+                                        .why-choose-us-reasons-item-icon
+                                            img(src=`./img/${item.icon}`)
+                                        h4=item.title
+                                        p=item.text
+        section.our-team
+            .container
+                .our-team-wrapper
+                    .row
+                        .col
+                            h2 Our Team
+                    .row
+                        .col-md-6
+                            .our-team-info
+                                p Our team members have a wide variety of experiences, from start-ups with large B2B clients to government institutions.
+                                p No matter the company, we have successfully used our knowledge of the digital world to ensure their success.
+                                p Each of us is an expert in our narrow field of marketing, including SEO, SMM, Content marketing, Email marketing, Psychology, Sales, and others.
+                                h3 By combining all of the skills, we create and implement truly functional strategies that help our customers reach their goals
+                        .col-md-6
+                            .our-team-imgs
+                                img.our-team-imgs-main(src=`./img/OurTeam.png`)
+                                img.our-team-imgs-icon(src=`./img/OurteamImg.svg`)
+
+
+
+
+
+

@@ -16,24 +16,53 @@ block content
                             .service-agency-cards
                                 h2 Full-Service Agency
                                 .service-agency-cards-container
-                                    each item in [{"href": '/', "icon": "SearchEngine.svg", "title": "Search Engine Optimization (SEO)", "p": "SEO is a digital marketing activity that helps potential customers quickly find your site using search engines such as Google, Yahoo and so on"}, {"href": '/', "icon": "PayPerClick.svg", "title": `Pay Per Click (PPC)`, "p": "Our agency launches high-impact PPC campaigns to bring a clear and attractive return on investment, using the custom advertising strategies"}, {"href": '/', "icon": "SMM.svg", "title": "Social Media Marketing (SMM)", "p": "Whether your customers are on Facebook, Twitter, Instagram, LinkedIn, or other social platforms, our social media marketing services can help you connect with them"}, {"href": '/', "icon": "DCM.svg", "title": "Digital Content Marketing", "p": "Сontent marketing is the wing of digital marketing that’s all about adding value at every phase of the customer journey"}, {"href": '/', "icon": "DMA.svg", "title": "Digital Marketing Audit", "p": "A marketing audit is an effective tool that allows you to determine and evaluate the effectiveness of company’s marketing efforts."}, {"href": '/', "icon": "EMO.svg", "title": "Email Marketing", "p": "Email marketing is a powerful tool for revenue generation."}]
+                                    each item in [{"href": '/', "icon": "SearchEngine.svg", "title": "Search Engine Optimization (SEO)", "p": "SEO is a digital marketing activity that helps potential customers quickly find your site using search engines such as Google, Yahoo and so on"}, {"href": '/', "icon": "PayPerClick.svg", "title": 'Pay Per Click<br>(PPC)', "p": "Our agency launches high-impact PPC campaigns to bring a clear and attractive return on investment, using the custom advertising strategies"}, {"href": '/', "icon": "SMM.svg", "title": "Social Media Marketing (SMM)", "p": "Whether your customers are on Facebook, Twitter, Instagram, LinkedIn, or other social platforms, our social media marketing services can help you connect with them"}, {"href": '/', "icon": "DCM.svg", "title": "Digital Content Marketing", "p": "Сontent marketing is the wing of digital marketing that’s all about adding value at every phase of the customer journey"}, {"href": '/', "icon": "DMA.svg", "title": "Digital Marketing Audit", "p": "A marketing audit is an effective tool that allows you to determine and evaluate the effectiveness of company’s marketing efforts."}, {"href": '/', "icon": "EMO.svg", "title": "Email Marketing", "p": "Email marketing is a powerful tool for revenue generation."}]
                                         a.service-agency-cards-item(href=`${item.href}`)
                                             .service-agency-cards-item-elements
                                                 .service-agency-cards-item-icon
                                                     img(src=`./img/${item.icon}`)
-                                                h4=item.title
+                                                h4!=item.title
                                                 p=item.p
                                             p.service-agency-cards-item-cta Learn more
             .service-agency-order
-                .service-agency-order-title
-                    h3 Ready to start cooperation?
-                    img(src=`./img/ReadyToStartImg.svg`)
-                .service-agency-order-form
-                    .service-agency-order-form-input
-                        +textInput('Amount')
-                    .service-agency-order-form-btn Order now
-
-
-
+                .container
+                    .service-agency-order-wrapper
+                        .row.align-items-center
+                            .col-md-4.col-lg-6
+                                .service-agency-order-ready
+                                    h3 Ready to start <br> cooperation?
+                                    img(src=`./img/ReadyToStartImg.svg`)
+                            .col-md-8.col-lg-6
+                                .service-agency-order-form
+                                    .row.align-items-end
+                                        .col-md
+                                            .service-agency-order-form-input
+                                                +textInput('Amount','number')
+                                        .col-md-auto
+                                            .service-agency-order-form-btn Order now
+        section.getInTouch
+            .container
+                .getInTouch-wrapper
+                    .row
+                        .col-12.col-sm-5.col-md-6
+                            .getInTouch-info
+                                h2 Get in Touch
+                                h3.getInTouch-info-subtitle We craft a unique strategy for each client.
+                                h3.getInTouch-info-subtitle In order to understand what's working best for your business – please, fill the form
+                                img(src=`./img/GetInTouchImage.svg`)
+                        .col-12.col-sm-7.col-md-6.getInTouch-form-background
+                            .getInTouch-form
+                                .getInTouch-form-radio.d-flex
+                                    span.getInTouch-form-radio-item
+                                        input(type='radio' id='getInTouchChoiceB2B' name='getInTouchRadioBtn' value='B2B' checked)
+                                        label(for='getInTouchChoiceB2B' ) B2B
+                                    span.getInTouch-form-radio-item
+                                        input(type='radio' id='getInTouchChoiceB2C' name='getInTouchRadioBtn' value='B2C')
+                                        label(for='getInTouchChoiceB2B' ) B2C
+                                +textInput('Your name','text', 'getInTouch-form-name-id', 'getInTouch-form-name')
+                                +textInput('Email','email', 'getInTouch-form-email-id', 'getInTouch-form-email', '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')
+                                +textInput('Phone','tel', 'getInTouch-form-tel-id', 'getInTouch-form-tel')
+                                +textInput('Your goals','text', 'getInTouch-form-goals-id', 'getInTouch-form-goals')
+                                .getInTouch-form-btn Send Email
 
 

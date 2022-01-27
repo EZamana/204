@@ -47,7 +47,10 @@
 }
 
 .service-agency {
-  margin: 3.75rem 0 4.6875rem 0;
+  margin-top: 3.75rem;
+  @include tablet {
+    margin-top: 3.125rem;
+  }
 
   h2 {
     text-align: center;
@@ -57,11 +60,7 @@
     }
   }
 
-  @include tablet {
-    margin: 3.125rem 0 1.5625rem 0;
-  }
-
-  &-cards{
+  &-cards {
     margin-bottom: 3.75rem;
     @include tablet {
       margin-bottom: 1.875rem;
@@ -94,12 +93,18 @@
 
       &:hover {
         background-color: $darkBlue;
+
         h4 {
           color: $lightColor;
         }
+
         p {
           color: $lightColor;
           opacity: 1;
+        }
+
+        img {
+          filter: invert(100%) sepia(21%) saturate(29%) hue-rotate(114deg) brightness(104%) contrast(110%);
         }
       }
 
@@ -136,27 +141,34 @@
   }
 
   &-order {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    background-color: $redColor;
-    max-width: 69.375rem;
-    padding: 3.75rem 4.0625rem 4.25rem 4.0625rem;
     @include tablet {
-      padding: 2.125rem;
-      flex-direction: column;
+      background-color: $redColor;
     }
 
-    &-title {
-      max-width: 18.125rem;
-      position: relative;
-      h3 {
-        color: $lightColor;
+    &-wrapper {
+      background-color: $redColor;
+      padding: 4.0625rem;
+      @include tablet {
+        padding: 2.25rem 1.5rem;
       }
+
+    }
+
+    &-ready {
+      position: relative;
+
+      h3 {
+        position: relative;
+        top: -0.625rem;
+        color: $lightColor;
+        @include tablet {
+          top: 0
+        }
+      }
+
       img {
+        bottom: -0.9375rem;
         position: absolute;
-        bottom: -1.5625rem;
         @include tablet {
           display: none;
         }
@@ -164,21 +176,14 @@
     }
 
     &-form {
-      display: flex;
-      width: 50%;
-      justify-content: space-between;
-      align-content: flex-end;
-
-
-      &-input {
-        display: flex;
-        align-items: flex-end;
-        @media (min-width: 992px) {
-          flex-grow: 0.6;
+      @include mobile-large {
+        .textInput {
+          margin-top: 2.5rem;
         }
       }
 
       &-btn {
+        margin: 0 auto;
         text-align: center;
         width: 11.875rem;
         padding: 0.90625rem;
@@ -187,12 +192,142 @@
         font-weight: 600;
         cursor: pointer;
         transition: .3s;
+
         &:hover {
-          opacity: 0.5;
+          color: $lightColor;
+          background-color: $redColor;
+        }
+
+        @include mobile-large {
+          margin-top: 2.5rem;
+          width: 100%;
         }
       }
-
     }
   }
 
+
+}
+
+.getInTouch {
+  margin-top: 9.375rem;
+  background-color: $grayColor;
+  @include tablet {
+    margin-top: 3.125rem;
+  }
+
+  &-info {
+    position: relative;
+    padding: 9.0625rem 0;
+    @include tablet {
+      padding: 4.6875rem 0;
+    }
+    @include mobile-small {
+      padding: 3.125rem 0 1.875rem 0;
+    }
+
+    img {
+      bottom: -1.25rem;
+      right: 4.375rem;
+      position: absolute;
+      @include tablet {
+        display: none;
+      }
+
+    }
+
+    h2 {
+      margin-bottom: 3.75rem;
+      @include tablet {
+       margin-bottom: 1.875rem;
+      }
+    }
+
+    &-subtitle {
+      opacity: 80%;
+      max-width: 28.75rem;
+
+      &:nth-child(n+2) {
+        margin-top: 0.625rem;
+      }
+    }
+  }
+
+  &-form {
+    padding: 9.375rem 4.0625rem 8.75rem 4.0625rem;
+    background-color: $darkBlue;
+    @include tablet {
+      padding: 4.6875rem 2.5rem;
+    }
+    @include mobile-small {
+      padding: 2.5rem 0 1.875rem 0;
+    }
+
+    &-background {
+      @include tablet {
+        background-color: $darkBlue;
+      }
+    }
+
+    &-radio {
+      &-item {
+        margin-right: 1.875rem;
+
+        input[type='radio'] {
+          display: inline-block;
+          -webkit-appearance: none;
+          appearance: none;
+          width: 1.5625rem;
+          height: 1.5625rem;
+          border: 0.125rem solid $lightColor;
+          border-radius: 50%;
+          background-color: $darkBlue;
+        }
+
+        input[type="radio"]::before {
+          display: inline-block;
+          content: "";
+          position: relative;
+          top: 0.125rem;
+          left: 0.125rem;
+          width: 1.0625rem;
+          height: 1.0625rem;
+          border-radius: 50%;
+          transform: scale(0);
+          transition: 120ms transform ease-in-out;
+          background-color: $lightColor;
+        }
+
+        input[type="radio"]:checked::before {
+          transform: scale(1);
+        }
+
+        label {
+          color: $lightColor;
+        }
+      }
+    }
+
+    .textInput {
+      margin-top: 2.5rem;
+    }
+
+    &-btn {
+      margin-top: 40px;
+      text-align: center;
+      cursor: pointer;
+      background-color: $lightColor;
+      font-weight: 600;
+      color: $darkBlue;
+      font-size: 1.125rem;
+      line-height: 1.320625rem;
+      padding: 1.21875rem;
+      transition: .3s;
+
+      &:hover {
+        background-color: $darkBlue;
+        color: $lightColor
+      }
+    }
+  }
 }
